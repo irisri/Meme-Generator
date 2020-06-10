@@ -1,0 +1,39 @@
+body {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    flex: wrap;
+    justify-content: space-between;
+}
+
+.model {
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 90vw; /* Full width */
+    height: 90vh; /* Full height */
+    margin: 5%;
+}
+
+.canvas-container {
+    height: 50%;
+}
+
+canvas {
+    margin: 0 5px;
+}
+
+.controllers {
+    width: 60vh;
+}
+
+input {
+    width: 100%;
+}
+
+img {
+    object-fit: cover;
+}
