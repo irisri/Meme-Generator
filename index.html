@@ -6,25 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator</title>
     <link rel="stylesheet" href="styles/style.css">
+
 </head>
 
 <body onload="init()">
-    <nav>
+    <nav class="flex">
         <h1>Meme Generator</h1>
     </nav>
     
-    <div class="model wrap">
-        <div class="canvas-container">
-            <canvas></canvas>
+    <div class="container">
+        <div class="model wrap">
+            <div class="canvas-container">
+                <canvas></canvas>
+            </div>
+            <div class="controllers">
+                <div class="inputs">
+                    <input onkeyup="onAddText(this)" placeholder="First line" type="text" name="line1">
+                </div>
+                <div class="buttons">
+                    <button onclick="onChangeFontSize(false)"><img src="img/icons/decrease font - icon.png"></button>
+                    <button onclick="onChangeonChangeFontSizeSize(true)"><img src="img/icons/increase font - icon.png"></button>
+                    <button onclick="onChangeHeight(false)">text down</button>
+                    <button onclick="onChangeHeight(true)">text up</button>
+                </div>
+                <!-- <input type="text" name="line2"> -->
+            </div>
         </div>
-        <div class="controllers">
-            <input onkeyup="onAddText(this)" placeholder="First line" type="text" name="line1">
-            <!-- <input type="text" name="line2"> -->
-        </div>
+    
+        <div class="gallery-container grid"></div>
     </div>
-
-    <div class="gallery-container flex wrap"></div>
-
 
     <script src="js/storage.service.js"></script>
     <script src="js/meme.service.js"></script>

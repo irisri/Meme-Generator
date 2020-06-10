@@ -3,10 +3,36 @@
     src: url(fonts/impact.ttf);
 }
 
+/* genral */
+
+* {
+    outline: none;
+}
+
+h1 {
+    margin: 0px;
+}
 
 body {
     margin: 0 auto;
     text-align: center;
+    font-family: impact;
+    width: 100vw;
+    height: 100vh;
+    background-color: #e3e3e3;
+}
+
+/* .container {
+} */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 12px;
+    justify-items: center;
+    align-items: center;
+    align-items: stretch;
 }
 
 .flex {
@@ -15,43 +41,85 @@ body {
 
 .wrap {
     flex-wrap: wrap;
-    justify-content: space-around;
+    /* justify-content: space-between; */
 }
+
+img {
+    object-fit: cover;
+}
+
+/* nav */
+
+nav {
+    background-color: #ff7f00;
+}
+
+h1 {
+    height: 66px;
+    margin-left: 49px;
+}
+
+/* gallery */
 
 .gallery-container img {
     height: 100px;
     width: 100px;
     object-fit: cover;
     border: solid 1px black;
-    margin-bottom: 10px;
+    cursor: pointer;
 }
+
+/* model */
 
 .model {
     z-index: 1;
-    width: 90vw; /* Full width */
-    height: 80vh; /* Full height */
-    margin: 5%;
+    width: 90%; 
+    height: 90%;
     display: none;
+    margin: 26px 51px 135px 23px;
 }
 
 .canvas-container {
-    width: 500px;
-    height: 500px;
-}
-
-canvas {
-    margin: 0 5px;
-}
-
-.controllers {
-    width: 30%;
-    margin: 0px;
+    width: 541px;
+    height: 541px;
+    margin-right: 99px;
 }
 
 input {
     width: 100%;
+    border-radius: 12px;
+    height: 60px;
+    width: 373px;
+    cursor: pointer;
+    margin-bottom: 11px;
+    font-size: 20px;
 }
 
-img {
-    object-fit: cover;
+input::placeholder {
+    font-family: impact;
+    font-size: 20px;
+}
+
+input[type=text] {
+    font-family: impact;
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+.controllers button {
+    cursor: pointer;
+    margin-right: 18px;
+    border: none;
+    border-radius: 12px;
+    background-color: #fff;
+}
+
+.controllers button img {
+    width: 60px;
+    height: 60px;
+}
+
+.controllers button i {
+    width: 60px;
+    height: 60px;
 }
