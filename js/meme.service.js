@@ -3,7 +3,7 @@
 // var gId = 0;
 const KEY = 'imges';
 var gImgs = _createImgs();
-var gMeme
+var gMeme;
 
 var gKeywords = {
     'happy': 12,
@@ -16,15 +16,24 @@ var gKeywords = {
 //     keywords: ['donald trump']
 // }];
 
-gMeme = {
-    selectedImgId: 1,
-    selectedLineIdx: 0,
-    lines: [{
-        txt: 'I never eat Falafel',
-        size: 20, 
-        align: 'left', 
-        color: 'red'
-    }]
+// gMeme = {
+//     selectedImgId: 1,
+//     selectedLineIdx: 0,
+//     lines: [{
+//         txt: 'I never eat Falafel',
+//         size: 20, 
+//         align: 'left', 
+//         color: 'red'
+//     }]
+// }
+
+function createMeme(id, url) {
+    return {
+        selectedImgId: id,
+        selectedImgurl: url,
+        selectedLineIdx: 0,
+        lines: []
+    };
 }
 
 function getTextFromMeme() {
@@ -52,4 +61,8 @@ function _createImg(id) {
         id: id,
         url: `img/meme-imgs(square)/${id}.jpg`
     }
+}
+
+function getImgeById(id) {
+    return gImgs.find(img => img.id === id);
 }

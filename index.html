@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body onload="init()">
     <nav>
         <h1>Meme Generator</h1>
     </nav>
-    <div class="gallery-container">
-    </div>
-
-    <div class="model flex">
+    
+    <div class="model wrap">
         <div class="canvas-container">
             <canvas></canvas>
         </div>
@@ -22,9 +22,14 @@
             <!-- <input type="text" name="line2"> -->
         </div>
     </div>
-    
+
+    <div class="gallery-container flex wrap"></div>
+
+
     <script src="js/storage.service.js"></script>
     <script src="js/meme.service.js"></script>
+    <script src="js/gallery-controller.js"></script>
     <script src="js/meme-controller.js"></script>
 </body>
+
 </html>

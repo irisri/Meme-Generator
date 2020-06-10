@@ -1,16 +1,19 @@
 'use strict'
 
-var gImgs;
+// var gImgs;
 var gElCanvas;
 var gCtx;
+var gImg;
 var gTextUp;
+var gMeme;
 
-function init() {
-    gImgs = getImags();
+function onOpenModel(id) {
+    document.querySelector('.gallery-container').style.display = 'none';
+    document.querySelector('.model').style.display = 'flex';
     gElCanvas = document.querySelector('canvas');
     gCtx = gElCanvas.getContext('2d');
     resizeCanvas();
-    onPickedImg();
+    onPickedImg(id);
 }
 
 function resizeCanvas() {
@@ -19,36 +22,42 @@ function resizeCanvas() {
     gElCanvas.height = elContainer.offsetHeight;
 }
 
-function onPickedImg() {
-    var img = getImgeById(1);
-    drawImgFromlocal(img.url);
-}
-
-function getImgeById(id) {
-    return gImgs.find(img => img.id === id);
+function onPickedImg(id) {
+    var img = getImgeById(id);
+    gMeme = createMeme(img.id, img.url);
+    drawImgFromlocal(gMeme.selectedImgurl);
 }
 
 function drawImgFromlocal(url) {
-    var img = new Image()
-    img.src = url;
-    img.onload = () => {
-        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height) 
+    gImg = new Image()
+    gImg.src = url;
+    gImg.onload = () => {
+        gCtx.drawImage(gImg, 0, 0, gElCanvas.width, gElCanvas.height); 
     }
 }
 
 function onAddText(elInput) {
-    // console.log('add')
-    var gTextUp = getTextFromMeme();
-    // gTextUp = elInput.value;
-    drawText(gTextUp, 'center', 100, 40)
+    clearCanvas();
+    gTextUp = elInput.value;
+    renderMeme(gTextUp);
+    gMeme.lines[0] = gTextUp;
 }
 
 function drawText(text, align, x, y) {
     gCtx.lineWidth = '2';
-    gCtx.font = '20px sans-serif';
+    gCtx.font = '20px impact';
     gCtx.textAlign = align;
     gCtx.strokeStyle = 'black';
     gCtx.strokeText(text, x, y);
     gCtx.fillStyle = 'white';
     gCtx.fillText(text, x, y);
+}
+
+function clearCanvas() {
+    gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height);
+}
+
+function renderMeme(txt) {
+    gCtx.drawImage(gImg, 0, 0, gElCanvas.width, gElCanvas.height); 
+    drawText(txt, 'center', 100, 40)
 }

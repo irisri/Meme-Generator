@@ -1,3 +1,9 @@
+@font-face {
+    font-family: impact;
+    src: url(fonts/impact.ttf);
+}
+
+
 body {
     margin: 0 auto;
     text-align: center;
@@ -5,21 +11,32 @@ body {
 
 .flex {
     display: flex;
-    flex: wrap;
-    justify-content: space-between;
+}
+
+.wrap {
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.gallery-container img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border: solid 1px black;
+    margin-bottom: 10px;
 }
 
 .model {
     z-index: 1;
-    left: 0;
-    top: 0;
     width: 90vw; /* Full width */
-    height: 90vh; /* Full height */
+    height: 80vh; /* Full height */
     margin: 5%;
+    display: none;
 }
 
 .canvas-container {
-    height: 50%;
+    width: 500px;
+    height: 500px;
 }
 
 canvas {
@@ -27,7 +44,8 @@ canvas {
 }
 
 .controllers {
-    width: 60vh;
+    width: 30%;
+    margin: 0px;
 }
 
 input {
