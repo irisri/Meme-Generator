@@ -21,6 +21,7 @@ function onOpenModel(id) {
 }
 
 function onHideModel() {
+    gMeme = null;
     document.querySelector('.gallery-container').style.display = 'grid';
     document.querySelector('.model').style.display = 'none';
     document.querySelector('[name=line]').value = '';
@@ -177,11 +178,15 @@ function onColorChange(elColor) {
 function onRemove() {
     if (gMeme.lines === 0) return;
     gMeme.lines[gMeme.selectedLineIdx] = null;
+    (gMeme.selectedLineIdx === 1) ? document.querySelector('[name=line]').placeholder = 'Second line' :
+        document.querySelector('[name=line]').placeholder = 'First line';
+    document.querySelector('[name=line]').value = '';
+    gStrock = '#000';
+    gFill = '#fff';
     renderMeme();
 }
 
 function downloadImg(ev) {
-    // ev.preventDefault();
     const data = gElCanvas.toDataURL();
     ev.href = data;
     ev.download = 'my_pic';

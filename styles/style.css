@@ -1,18 +1,24 @@
+/* genral */
+
+* {
+    outline: none;
+    box-sizing: border-box;
+
+}
+
 @font-face {
     font-family: impact;
     src: url(fonts/impact.ttf);
 }
 
 @font-face {
-    font-family: Montserrat;
+    font-family: montserrat;
     src: url(fonts/Montserrat-Regular.ttf);
 }
 
-/* genral */
-
-* {
-    outline: none;
-    box-sizing: border-box;
+@font-face {
+    font-family: roboto;
+    src: url(fonts/Roboto-Black.ttf);
 }
 
 h1, p {
@@ -34,9 +40,9 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 353px);
+    /* grid-template-columns: repeat(3, 353px);
     grid-template-rows: repeat(6, 278px);
-    grid-gap: 21px;
+    grid-gap: 21px; */
     align-items: center;
     justify-content: center;
 }
@@ -71,10 +77,11 @@ button {
 }
 
 .main-nav h1 {
+    /* margin-left: 49px; */
     height: fit-content;
     width: fit-content;
     color: white;
-    margin-left: 49px;
+    font-family: roboto, Helvetica, sans-serif;
 }
 
 /* .main-nav ul {
@@ -84,12 +91,16 @@ button {
 .main-nav ul li {
     color: white;
     display: flex;
+    font-family: montserrat;
+    /* font-size: 1.1875;
     height: 66px;
-    font-family: Montserrat;
-    font-size: 1.1875;
-    padding-left: 29px;
+    padding-left: 29px; */
     justify-content: center;
     align-items: center;
+}
+
+.menu {
+    display: none;
 }
 
 nav ul li:hover {
@@ -97,19 +108,19 @@ nav ul li:hover {
     cursor: pointer;
 }
 
-.main-nav ul li:last-of-type {
+/* .main-nav ul li:last-of-type {
     padding-right: 57px;
-}
+} */
 
 /* gallery */
 
-.gallery-container {
+/* .gallery-container {
     padding: 27px 50px;
-}
+} */
 
 .gallery-container img {
-    height: 278px;
-    width: 353px;
+    /* height: 278px;
+    width: 353px; */
     object-fit: cover;
     border: solid 1px black;
 }
@@ -125,23 +136,23 @@ nav ul li:hover {
     width: 90%; 
     height: 90%;
     display: none;
-    margin: 26px 51px 135px 23px;
+    /* margin: 26px 51px 135px 23px; */
 }
 
-.canvas-container {
+/* .canvas-container {
     width: 541px;
     height: 541px;
     margin-right: 99px;
-}
+} */
 
 input {
     display: block;
     width: 100%;
     border-radius: 12px;
-    height: 60px;
+    /* height: 60px;
     width: 373px;
     margin-bottom: 11px;
-    font-size: 1.25rem;
+    font-size: 1.25rem; */
 }
 
 input:hover {
@@ -150,63 +161,65 @@ input:hover {
 
 input::placeholder {
     font-family: impact;
-    font-size: 1.25rem;
+    /* font-size: 1.25rem; */
 }
 
 input[type=text] {
     font-family: impact;
-    font-size: 20px;
-    padding-left: 20px;
+    /* font-size: 20px;
+    padding-left: 20px; */
 }
 
-.main-controllers {
+/* .main-controllers {
     margin-bottom: 43px;
-}
+} */
 
-.controllers button {
+/* .controllers button {
     margin-right: 18px;
-}
+} */
 
 .controllers button {
     cursor: pointer;
 }
 
-.controllers button img {
+/* .controllers button img {
     width: 60px;
     height: 60px;
-}
+} */
 
-.change-visibility button {
+/* .change-meme-txt button {
     margin-bottom: 10px;
-}
+} */
 
 /* footer */
+
 footer {
     color: #e3e3e3;
     background-color: #ff7f00;
-    height: 207px;
+    /* height: 207px; */
     margin: 0px;
 }
 
-footer h1 {
+/* footer h1 {
     padding-top: 77px;
     margin-bottom: 16px;
-}
+} */
 
 #input-hide {
     visibility: hidden;
 }
 
 .download {
-    width: 120px;
-    height: 60px;
+    /* width: 120px;
+    height: 60px; */
     background-color: #ff7f00;
 }
 
 .controllers a {
-    font-family: Montserrat;
-    font-size: 1.25rem;
+    /* font-size: 1.25rem; */
+    font-family: montserrat;
     color: #e3e3e3;
+    text-decoration: none;
 }
 
 a:active {
@@ -215,4 +228,151 @@ a:active {
 
 a:visited {
     color: #e3e3e3;
+}
+
+@media (max-width: 1800px) {
+    .grid {
+        grid-template-columns: repeat(3, 353px);
+        grid-template-rows: repeat(6, 278px);
+        grid-gap: 21px;
+    }
+
+    .main-nav h1 {
+        margin-left: 49px;
+    }
+
+    .main-nav ul li {
+        font-size: 1.1875;
+        height: 66px;
+        padding-left: 29px;
+    }
+
+    .main-nav ul li:last-of-type {
+        padding-right: 57px;
+    }
+
+    .gallery-container {
+        padding: 27px 50px;
+    }
+
+    .gallery-container img {
+        height: 278px;
+        width: 353px;
+    }
+    .model {
+        margin: 26px 51px 135px 23px;
+    }
+
+    .canvas-container {
+        width: 541px;
+        height: 541px;
+        margin-right: 99px;
+    }
+
+    input {
+        height: 60px;
+        width: 373px;
+        margin-bottom: 11px;
+        font-size: 1.25rem;
+    }
+
+    input::placeholder {
+        font-size: 1.25rem;
+    }
+
+    input[type=text] {
+        font-size: 1.25‬;
+        padding-left: 20px;
+    }
+
+    .main-controllers {
+        margin-bottom: 43px;
+    }
+
+    .controllers button {
+        margin-right: 18px;
+    }
+
+    .controllers button img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .change-meme-txt button {
+        margin-bottom: 10px;
+    }
+
+    footer {
+        height: 207px;
+    }
+
+    footer h1 {
+        padding-top: 77px;
+        margin-bottom: 16px;
+    }
+
+    .download {
+        width: 120px;
+        height: 60px;
+    }
+
+    .controllers a {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .grid {
+        grid-template-columns: repeat(2, 163px);
+        grid-template-rows: repeat(9, 163px);
+        grid-gap: 4px;
+    }
+
+    .main-nav {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .main-nav ul li {
+        display: none;
+    }
+
+    .main-nav h1 {
+        margin-left: 10px;
+    }
+    
+    .menu {
+        display: inline-block;
+        height: 65px;
+        font-size: 1.2rem;
+        background-color: #ff7f00;
+        color: #e3e3e3;
+        margin-right: 10px;
+    }
+
+    .gallery-container {
+        padding: 18px 10px;
+    }
+
+    .gallery-container img {
+        height: 163px;
+        width: 163px;
+    }
+
+    .model {
+        flex-direction: column;
+        margin: 0;
+    }
+    
+    .canvas-container {
+        margin: 8px 10px;
+        width: 300px;
+        height: 300px;
+    }
+
+    input {
+        width: 329px;
+        height: 39px;
+    }
+
 }
