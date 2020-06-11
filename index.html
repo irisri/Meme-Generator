@@ -21,11 +21,12 @@
             </div>
             <div class="controllers">
                 <div class="inputs">
-                    <input onkeyup="onAddText(this)" placeholder="First line" type="text" name="line1">
+                    <input onclick="onSenlectedInput(0)" onkeyup="onAddText(this)" placeholder="First line" type="text" name="line1">
+                    <input onclick="onSenlectedInput(1)" onkeyup="onAddText(this)" placeholder="Second line" type="text" name="line2">
                 </div>
                 <div class="buttons">
                     <button onclick="onChangeFontSize(false)"><img src="img/icons/decrease font - icon.png"></button>
-                    <button onclick="onChangeonChangeFontSizeSize(true)"><img src="img/icons/increase font - icon.png"></button>
+                    <button onclick="onChangeFontSize(true)"><img src="img/icons/increase font - icon.png"></button>
                     <button onclick="onChangeHeight(false)">text down</button>
                     <button onclick="onChangeHeight(true)">text up</button>
                 </div>
