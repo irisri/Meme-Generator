@@ -10,32 +10,59 @@
 </head>
 
 <body onload="init()">
-    <nav class="flex">
+    <nav class="main-nav flex space-between">
         <h1>Meme Generator</h1>
+        <ul class="flex wrap clean-list">
+            <li>
+                <a onclick="onHideModel()">Gallery</a>
+            </li>
+            <li>
+                <a>About</a>
+            </li>
+        </ul>
     </nav>
-    
+
     <div class="container">
         <div class="model wrap">
             <div class="canvas-container">
                 <canvas></canvas>
             </div>
             <div class="controllers">
-                <div class="inputs">
-                    <input onclick="onSenlectedInput(0)" onkeyup="onAddText(this)" placeholder="First line" type="text" name="line1">
-                    <input onclick="onSenlectedInput(1)" onkeyup="onAddText(this)" placeholder="Second line" type="text" name="line2">
+                <div class="main-controllers">
+                    <input onkeyup="onAddText(this)" placeholder="First line" type="text" name="line">
+                    <!-- <input onclick="onSenlectedInput(1)" onkeyup="onAddText(this)" placeholder="Second line" type="text" name="line2"> -->
+                    <button onclick="OnSwitchLine()"><img
+                            src="img/icons/up-and-down-opposite-double-arrows-side-by-side.png"></button>
+                    <button><img src="img/icons/trash.png"></button>
+                    <button><img src="img/icons/add.png"></button>
                 </div>
-                <div class="buttons">
-                    <button onclick="onChangeFontSize(false)"><img src="img/icons/decrease font - icon.png"></button>
-                    <button onclick="onChangeFontSize(true)"><img src="img/icons/increase font - icon.png"></button>
-                    <button onclick="onChangeHeight(false)">text down</button>
-                    <button onclick="onChangeHeight(true)">text up</button>
+                <div class="change-visibility">
+                    <div>
+                        <button onclick="onChangeFontSize(false)"><img
+                                src="img/icons/decrease font - icon.png"></button>
+                        <button onclick="onChangeFontSize(true)"><img src="img/icons/increase font - icon.png"></button>
+                        <button onclick="onAlign('left')"><img src="img/icons/align-to-left.png"></button>
+                        <button onclick="onAlign('center')"><img src="img/icons/center-text-alignment.png"></button>
+                        <button onclick="onAlign('right')"><img src="img/icons/align-to-right.png"></button>
+                    </div>
+                    <div>
+                        <button onclick="onChangeHeight(false)"><img src="img/icons/down.jpeg"></button>
+                        <button onclick="onChangeHeight(true)"><img src="img/icons/up.jpeg"></button>
+                        <input onchange="onColorChange()" type="color">
+                    </div>
                 </div>
                 <!-- <input type="text" name="line2"> -->
             </div>
         </div>
-    
+
         <div class="gallery-container grid"></div>
     </div>
+
+    <div class=social></div>
+    <footer>
+        <h1>Meme Generator</h1>
+        <p>all rights reserved 2019</p>
+    </footer>
 
     <script src="js/storage.service.js"></script>
     <script src="js/meme.service.js"></script>

@@ -3,13 +3,19 @@
     src: url(fonts/impact.ttf);
 }
 
+@font-face {
+    font-family: Montserrat;
+    src: url(fonts/Montserrat-Regular.ttf);
+}
+
 /* genral */
 
 * {
     outline: none;
+    box-sizing: border-box;
 }
 
-h1 {
+h1, p {
     margin: 0px;
 }
 
@@ -17,22 +23,22 @@ body {
     margin: 0 auto;
     text-align: center;
     font-family: impact;
-    width: 100vw;
-    height: 100vh;
     background-color: #e3e3e3;
 }
 
-/* .container {
-} */
+.clean-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-gap: 12px;
-    justify-items: center;
+    grid-template-columns: repeat(3, 353px);
+    grid-template-rows: repeat(6, 278px);
+    grid-gap: 21px;
     align-items: center;
-    align-items: stretch;
+    justify-content: center;
 }
 
 .flex {
@@ -41,7 +47,10 @@ body {
 
 .wrap {
     flex-wrap: wrap;
-    /* justify-content: space-between; */
+}
+
+.space-between {
+    justify-content: space-between;
 }
 
 img {
@@ -50,22 +59,56 @@ img {
 
 /* nav */
 
-nav {
+.main-nav {
     background-color: #ff7f00;
+    align-items: center;
 }
 
-h1 {
-    height: 66px;
+.main-nav h1 {
+    height: fit-content;
+    width: fit-content;
+    color: white;
     margin-left: 49px;
+}
+
+/* .main-nav ul {
+    align-items: center;
+} */
+
+.main-nav ul li {
+    color: white;
+    display: flex;
+    height: 66px;
+    font-family: Montserrat;
+    font-size: 19px;
+    padding-left: 29px;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.main-nav ul li:last-of-type {
+    padding-right: 57px;
 }
 
 /* gallery */
 
+.gallery-container {
+    padding: 27px 50px;
+}
+
 .gallery-container img {
-    height: 100px;
-    width: 100px;
+    height: 278px;
+    width: 353px;
     object-fit: cover;
     border: solid 1px black;
+}
+
+.gallery-container img:hover {
     cursor: pointer;
 }
 
@@ -91,9 +134,12 @@ input {
     border-radius: 12px;
     height: 60px;
     width: 373px;
-    cursor: pointer;
     margin-bottom: 11px;
     font-size: 20px;
+}
+
+input:hover {
+    cursor: pointer;
 }
 
 input::placeholder {
@@ -107,12 +153,19 @@ input[type=text] {
     padding-left: 20px;
 }
 
+.main-controllers {
+    margin-bottom: 43px;
+}
+
 .controllers button {
-    cursor: pointer;
     margin-right: 18px;
     border: none;
     border-radius: 12px;
     background-color: #fff;
+}
+
+.controllers button {
+    cursor: pointer;
 }
 
 .controllers button img {
@@ -120,7 +173,19 @@ input[type=text] {
     height: 60px;
 }
 
-.controllers button i {
-    width: 60px;
-    height: 60px;
+.change-visibility button {
+    margin-bottom: 10px;
+}
+
+/* footer */
+footer {
+    color: #e3e3e3;
+    background-color: #ff7f00;
+    height: 207px;
+    margin: 0px;
+}
+
+footer h1 {
+    padding-top: 77px;
+    margin-bottom: 16px;
 }

@@ -27,11 +27,11 @@ var gKeywords = {
 //     }]
 // }
 
-function createMeme(id, url) {
+function createMeme(id, url, num = 0) {
     return {
         selectedImgId: id,
         selectedImgurl: url,
-        selectedLineIdx: 0,
+        selectedLineIdx: num,
         lines: []
     };
 }
