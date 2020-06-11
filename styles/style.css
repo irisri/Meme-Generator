@@ -57,6 +57,12 @@ img {
     object-fit: cover;
 }
 
+button {
+    border: none;
+    border-radius: 12px;
+    background-color: #fff;
+}
+
 /* nav */
 
 .main-nav {
@@ -80,7 +86,7 @@ img {
     display: flex;
     height: 66px;
     font-family: Montserrat;
-    font-size: 19px;
+    font-size: 1.1875;
     padding-left: 29px;
     justify-content: center;
     align-items: center;
@@ -135,7 +141,7 @@ input {
     height: 60px;
     width: 373px;
     margin-bottom: 11px;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 input:hover {
@@ -144,7 +150,7 @@ input:hover {
 
 input::placeholder {
     font-family: impact;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 input[type=text] {
@@ -159,9 +165,6 @@ input[type=text] {
 
 .controllers button {
     margin-right: 18px;
-    border: none;
-    border-radius: 12px;
-    background-color: #fff;
 }
 
 .controllers button {
@@ -188,4 +191,28 @@ footer {
 footer h1 {
     padding-top: 77px;
     margin-bottom: 16px;
+}
+
+#input-hide {
+    visibility: hidden;
+}
+
+.download {
+    width: 120px;
+    height: 60px;
+    background-color: #ff7f00;
+}
+
+.controllers a {
+    font-family: Montserrat;
+    font-size: 1.25rem;
+    color: #e3e3e3;
+}
+
+a:active {
+    color: #e3e3e3;
+}
+
+a:visited {
+    color: #e3e3e3;
 }
