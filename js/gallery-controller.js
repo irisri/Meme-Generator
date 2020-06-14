@@ -13,3 +13,8 @@ function setGallery() {
     ).join('');
     gallery.innerHTML = strHTML;  
 }
+
+function toggleMenu() {
+    document.getElementById('mainMenu').classList.toggle('open');
+    document.querySelector('.show-menu').classList.toggle('open');
+}

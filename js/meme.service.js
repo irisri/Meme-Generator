@@ -28,16 +28,89 @@ var gKeywords = {
 // }
 
 function createMeme(id, url, num = 0) {
-    return {
+    gMeme = {
         selectedImgId: id,
         selectedImgurl: url,
         selectedLineIdx: num,
         lines: []
     };
+    // return {
+    //     selectedImgId: id,
+    //     selectedImgurl: url,
+    //     selectedLineIdx: num,
+    //     lines: []
+    // };
 }
 
-function getTextFromMeme() {
-    return gMeme.lines[0].txt;
+function createLines(index) {
+    gMeme.lines[index] = {
+        txt: null,
+        size: 30,
+        align: 'center',
+        height: 30,
+        strock: '#000',
+        fill: '#fff'
+    }
+}
+
+function isThereLine(index) {
+    if (!gMeme.lines[index]) createLines(index);
+}
+
+function setColor(index, isStrock, color) {
+    isThereLine(index);
+    (isStrock) ? gMeme.lines[index].strock = color : gMeme.lines[index].fill = color;
+}
+
+function returnLines() {
+    return gMeme.lines;
+}
+
+function createTxt(index, txt, width) {
+    isThereLine(index)
+    gMeme.lines[index].txt = txt;
+    // console.log(gMeme.lines[index].txt)
+    gMeme.lines[index].width = width;
+}
+
+function setTxtAlign(index, align, width) {
+    isThereLine(index)
+    gMeme.lines[index].align = align;
+    gMeme.lines[index].width = width;
+}
+
+function setFontSize(isAddFontSize, index) {
+    isThereLine(index)
+    if (isAddFontSize) {
+        if (gMeme.lines[index].size + 10 > 70) return;
+        gMeme.lines[index].size += 10;
+        gMeme.lines[index].height = gMeme.lines[index].size + 10;
+    } else {
+        if (gMeme.lines[index].size - 10 < 30) return;
+        gMeme.lines[index].size -= 10;
+        gMeme.lines[index].height = gMeme.lines[index].size - 10;
+    }
+}
+
+function removeLineFromMeme(index) {
+    if (gMeme.lines === 0) return;
+    gMeme.lines[index] = null;
+}
+
+function setHeight(index, isMovingUp) {
+    isThereLine(index)
+    if (isMovingUp) {
+        if (gMeme.lines[index].height < gMeme.lines[index].size + 10) return;
+        gMeme.lines[index].height -= 10;
+    } else {
+        if (gMeme.lines[index].height >= 530) return;
+        gMeme.lines[index].height += 10;
+    }
+}
+
+function getTxt(index) {
+    isThereLine(index);
+    return (gMeme.lines[index].txt) ? gMeme.lines[index].txt : false;
 }
 
 function getImags() {

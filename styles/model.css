@@ -1,0 +1,24 @@
+.model {
+    z-index: 1;
+    width: 90%; 
+    height: 90%;
+    display: none;
+}
+
+input {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+input::placeholder {
+    font-family: impact;
+}
+
+input[type=text] {
+    font-family: impact;
+}

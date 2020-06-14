@@ -6,59 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator</title>
     <link rel="stylesheet" href="styles/style.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body onload="init()">
-    <nav class="main-nav flex space-between">
-        <h1>MemeGene</h1>
-        <ul class="flex wrap clean-list">
-            <li>
-                <a onclick="onHideModel()">Gallery</a>
-            </li>
-            <li>
-                <a>About</a>
-            </li>
-        </ul>
-        <button class="menu">☰</button>
-    </nav>
+    <header class="flex space-between">
+        <h1><a class="logo" href=index.html>MemeGene</a></h1>
+        <nav class="main-nav" id="mainMenu">
+            <ul class="flex clean-list show-menu">
+                <li>
+                    <a onclick="onShowGallery()">Gallery</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+            </ul>
+            <button class="toggle-menu-btn" onclick="toggleMenu()">☰</button>
+            <div class="toggle-menu-screen" onclick="toggleMenu()"></div>
+        </nav>        
+    </header>
 
-    <div class="container">
-        <div class="model wrap">
-            <div class="canvas-container">
-                <canvas></canvas>
-            </div>
-            <div class="controllers">
-                <div class="main-controllers">
-                    <input onkeyup="onAddText(this)" placeholder="First line" type="text" name="line">
-                    <button onclick="OnSwitchLine()"><img
-                            src="img/icons/up-and-down-opposite-double-arrows-side-by-side.png"></button>
-                    <button onclick="onRemove()"><img src="img/icons/trash.png"></button>
-                    <!-- <button><img src="img/icons/add.png"></button> -->
-                </div>
-                <div class="change-meme-txt">
-                    <div>
-                        <button onclick="onChangeFontSize(false)"><img
-                                src="img/icons/decrease font - icon.png"></button>
-                        <button onclick="onChangeFontSize(true)"><img src="img/icons/increase font - icon.png"></button>
-                        <button onclick="onAlign('left')"><img src="img/icons/align-to-left.png"></button>
-                        <button onclick="onAlign('center')"><img src="img/icons/center-text-alignment.png"></button>
-                        <button onclick="onAlign('right')"><img src="img/icons/align-to-right.png"></button>
-                    </div>
-                    <div>
-                        <button onclick="onChangeHeight(false)"><img src="img/icons/down.jpeg"></button>
-                        <button onclick="onChangeHeight(true)"><img src="img/icons/up.jpeg"></button>
-                        <button onclick="onOpenColor(true)"><img src="img/icons/text stroke.png"></button>
-                        <button onclick="onOpenColor(false)"><img src="img/icons/paint-board-and-brush.png"></button>
-                        <input onchange="onColorChange(this)" id="input-hide" type="color">
-                    </div>
-                </div>
-                <button class="download"><a href="#" onclick="downloadImg(this)" download="">Download</a></button>
-            </div>
+    <div class="model wrap">
+        <div class="canvas-container">
+            <canvas></canvas>
         </div>
-
-        <div class="gallery-container grid"></div>
+        <div class="controllers">
+            <div class="main-controllers">
+                <input onkeyup="onAddText(this)" placeholder="First line" type="text" name="line">
+                <button onclick="OnSwitchLine()"><img
+                        src="img/icons/up-and-down-opposite-double-arrows-side-by-side.png"></button>
+                <button onclick="onRemove()"><img src="img/icons/trash.png"></button>
+            </div>
+            <div class="change-meme-txt">
+                <div>
+                    <button onclick="onChangeFontSize(false)"><img src="img/icons/decrease font - icon.png"></button>
+                    <button onclick="onChangeFontSize(true)"><img src="img/icons/increase font - icon.png"></button>
+                    <button onclick="onAlign('left')"><img src="img/icons/align-to-left.png"></button>
+                    <button onclick="onAlign('center')"><img src="img/icons/center-text-alignment.png"></button>
+                    <button onclick="onAlign('right')"><img src="img/icons/align-to-right.png"></button>
+                </div>
+                <div>
+                    <button onclick="onChangeHeight(false)"><img src="img/icons/down.jpeg"></button>
+                    <button onclick="onChangeHeight(true)"><img src="img/icons/up.jpeg"></button>
+                    <button onclick="onOpenColor(true)"><img src="img/icons/text stroke.png"></button>
+                    <button onclick="onOpenColor(false)"><img src="img/icons/paint-board-and-brush.png"></button>
+                    <input onchange="onColorChange(this)" class="hidden" type="color">
+                </div>
+            </div>
+            <button class="download"><a href="#" onclick="downloadImg(this)" download="">Download</a></button>
+        </div>
     </div>
+
+    <div class="gallery-container grid"></div>
 
     <div class=social></div>
     <footer>

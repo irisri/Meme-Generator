@@ -1,0 +1,69 @@
+.toggle-menu-screen {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background: rgba(42, 42, 42, 0.6);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+    transition: opacity .5s; 
+}
+
+/* nav */
+
+header {
+    background-color: #ff7f00;
+    align-items: center;
+}
+
+.logo {
+    height: fit-content;
+    width: fit-content;
+    color: white;
+    font-family: roboto, Helvetica, sans-serif;
+}
+
+.main-nav ul li {
+    color: white;
+    display: flex;
+    font-family: montserrat;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-container img {
+    object-fit: cover;
+    border: solid 1px black;
+}
+
+.gallery-container img:hover {
+    cursor: pointer;
+}
+
+.toggle-menu-btn {
+    height: 65px;
+    font-size: 1.2rem;
+    background-color: #ff7f00;
+    color: #e3e3e3;
+    margin-right: 10px;
+    margin-right: 10px;
+}
+
+/* footer */
+
+footer {
+    color: #e3e3e3;
+    background-color: #ff7f00;
+    margin: 0px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.download {
+    background-color: #ff7f00;
+}
